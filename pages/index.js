@@ -30,7 +30,7 @@ export default function Home() {
           <Input placeholder="my url name" id='name' style={{ width: '200px' }} />
         </div>
         <div className={styles.button_doiIt}>
-          <Button colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
+          <Button id="button" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
             Do It!
           </Button>
         </div>
