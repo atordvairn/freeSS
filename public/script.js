@@ -1,3 +1,5 @@
+try{
+
 document.querySelector("#button").addEventListener("click", function(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -8,3 +10,5 @@ document.querySelector("#button").addEventListener("click", function(){
   xhttp.open("GET", `/create/${document.querySelector("#name").value}=${document.querySelector("#url").value}`, true);
   xhttp.send();
 })
+
+}catch(e){alert(e)}
