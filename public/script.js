@@ -1,12 +1,7 @@
 document.querySelector("#button").addEventListener("click", function(){
 try{
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         alert(xhttp.responseText)
-      }
-  };
-  xhttp.open("GET", `https://throw-me-to.vercel.app/api/create/${document.querySelector("#name").value}=${document.querySelector("#url").value}`, true);
-  xhttp.send();
+   
+ window.location.replace("https://throw-me-to.vercel.app/api/create/abc=xyz");
+
 }catch(e){alert(e)}
 })
