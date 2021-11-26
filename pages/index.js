@@ -17,11 +17,11 @@ export default function Home() {
         <h1 className={styles.title}>
           Throw-Me-To
           <div style={{ fontSize: '1rem' }}>
-            ( it's a url shortner )
+            ( it&apos;s a url shortner )
           </div>
         </h1>
         <p className={styles.description}>
-          don't worry we'll throw you well.
+          don&apos;t worry we&apos;ll throw you well.
         </p>
         <div className={styles.input_cont}>
           <Input placeholder="enter your looong url" id='url' />
