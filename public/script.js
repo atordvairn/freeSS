@@ -6,7 +6,7 @@ try{
          alert(xhttp.responseText)
       }
   };
-  xhttp.open("GET", `/create/${document.querySelector("#name").value}=${document.querySelector("#url").value}`, true);
+  xhttp.open("GET", `https://throw-me-to.vercel.app/api/create/${document.querySelector("#name").value}=${document.querySelector("#url").value}`, true);
   xhttp.send();
 }catch(e){alert(e)}
 })
