@@ -12,7 +12,7 @@ export default function handler({ query: { data } }, res) {
 
     console.log(data)
     res.status(200).json(user)
-    res.redirect('https://throw-me-to.vercel.app/'+data.split(/\=/)[1]);
+    res.redirect('https://throw-me-to.vercel.app/');
   }
 
   main()
