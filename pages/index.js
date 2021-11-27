@@ -15,6 +15,8 @@ export default function Home() {
       </Head>
       <Script src="/jQuery.js" />
       <Script src="/script.js" />
+     <Script src="//cdn.jsdelivr.net/npm/eruda" />
+     <Script>eruda.init();</Script>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
