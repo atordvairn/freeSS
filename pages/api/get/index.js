@@ -10,11 +10,12 @@ export default function handler(req, res) {
     async function main() {
       res.setHeader('Content-Type', 'application/json')
       res.status(200).json(
-        await prisma.urls.findFirst({
+        await prisma.urls.findUnique({
           where: {
             name: req.body.name
           }
         }))
+      res.end("")
     }
 
     main()

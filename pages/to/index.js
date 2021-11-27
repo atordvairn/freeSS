@@ -1,11 +1,12 @@
 import React from 'react'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
+import router from 'next/router'
 
-export default function To(props) {
+export default function To() {
     const router = useRouter()
     let todo = {
-        name: 'raghav'
+        name: router.query.q
     };
 
     fetch('/api/get/', {
@@ -17,6 +18,6 @@ export default function To(props) {
 
     return (<>
         you will be redirected shotly
-        {}
+        {JSON.stringify(router.query.q)}
     </>)
 }
