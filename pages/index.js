@@ -5,10 +5,13 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Input } from "@chakra-ui/react"
 import Script from 'next/script'
 import React from 'react'
-import init from './init'
+
 export default function Home() {
-init()
-  React.useEffect(() => {
+function init(){
+ fetch("/api/create/jdienznzn=9)#(#(")
+}
+
+React.useEffect(() => {
 
   }, [])
 
