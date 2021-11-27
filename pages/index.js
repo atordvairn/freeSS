@@ -7,19 +7,11 @@ import Script from 'next/script'
 import React from 'react'
 
 export default function Home() {
-function handleChange(event){ 
-    this.setState({ 
-      subject: event.target.value 
-    })
-  } 
-
-function init(){
- fetch("/api/create/jdienzn=yes")
-}
-
-React.useEffect(() => {
-
-  }, [])
+function Form() {
+  const registerUser = event => {
+    event.preventDefault() // don't redirect the page
+    
+  }
 
   return (
     <div className={styles.container}>
@@ -41,15 +33,19 @@ React.useEffect(() => {
         <p className={styles.description}>
           don&apos;t worry we&apos;ll throw you well.
         </p>
+        <form onSubmit={registerUser}>
+          
         <div className={styles.input_cont}>
-          <Input placeholder="enter your looong url" id='url' onChange={this.handleChange} />
-          <Input placeholder="my url name" id='name' style={{ width: '200px' }} />
+          <Input placeholder="enter your looong url" required/>
+          <Input placeholder="my url name" id='name' style={{ width: '200px' }} required/>
         </div>
         <div className={styles.button_doiIt}>
-          <Button id="button" onClick={init} colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
-            Do It! {this.state.subject}
+          <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
+            Do It!
           </Button>
         </div>
+
+        </form>
       </main>
 
       <footer className={styles.footer}>
