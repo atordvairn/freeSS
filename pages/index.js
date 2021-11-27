@@ -9,7 +9,7 @@ import React from 'react'
 export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
-    fetch("/api/create/"+event.target.name.value+"=?="+event.target.url.value)
+    fetch("/api/create/"+event.target.name.value+"="+event.target.url.value)
     alert(0)
   }
 
@@ -21,7 +21,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script src="/jQuery.js" />
-      <Script src="/script.js" />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
