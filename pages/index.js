@@ -37,7 +37,7 @@ export default function Home() {
           
         <div className={styles.input_cont}>
           <Input placeholder="my url name" style={{ width: '200px' }} required id="url" name="url" type="text" />
-          <Input placeholder="enter your looong url" id="name" name="name" type="url" required/>
+          <Input placeholder="enter your looong url" id="name" name="name" type="text" required/>
         </div>
         <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
