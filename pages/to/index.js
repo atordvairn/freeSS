@@ -6,7 +6,7 @@ import router from 'next/router'
 export default function To() {
     const router = useRouter()
     let todo = {
-        name: 'raghav'
+        name: JSON.stringify(router.query.q)
     };
 
     fetch('/api/get/', {
@@ -18,6 +18,6 @@ export default function To() {
 
     return (<>
         you will be redirected shotly
-        {JSON.stringify(router.query)}
+        {JSON.stringify(router.query.q)}
     </>)
 }
