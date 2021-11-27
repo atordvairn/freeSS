@@ -5,13 +5,13 @@ export default function handler(req, res) {
 if (req.method !== 'POST') {
   res.status(400).send({ message: 'Only POST requests allowed' })
   return
-}
+}else{
 
   async function main() {
     const user = await prisma.urls.create({
       data: {
-        name: data.split(/=/)[0],
-        url: data.split(/=/)[1],
+        name: req.body.name,
+        url: req.body.url
       },
     })
 
@@ -27,4 +27,5 @@ if (req.method !== 'POST') {
     .finally(async () => {
       await prisma.$disconnect()
     })
+  }
 }
