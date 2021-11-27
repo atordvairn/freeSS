@@ -5,7 +5,8 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Input } from "@chakra-ui/react"
 import Script from 'next/script'
 import React from 'react'
-import swal from 'sweetalert';
+import swal from 'sweetalert'
+import copy from 'copy-text-to-clipboard'
 
 export default function Home() {
   function registerUser(event){
@@ -19,6 +20,7 @@ export default function Home() {
       body: JSON.stringify(data__),
     })
     swal("link successfully generated and copied to clipboard!");
+    copy('🦄🌈');
 
   }
 
