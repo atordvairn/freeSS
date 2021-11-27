@@ -7,11 +7,9 @@ import Script from 'next/script'
 import React from 'react'
 
 export default function Home() {
-function Form() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
     }
-  }
 
   return (
     <div className={styles.container}>
