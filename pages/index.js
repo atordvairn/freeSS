@@ -9,7 +9,8 @@ import React from 'react'
 export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
-    }
+    fetch("/api/create/te479784748684684684=ffiufukukfkukyffku")
+  }
 
   return (
     <div className={styles.container}>
@@ -34,8 +35,8 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="enter your looong url" required/>
-          <Input placeholder="my url name" id='name' style={{ width: '200px' }} required/>
+          <Input placeholder="enter your looong url" id="url" name="url" type="text" required/>
+          <Input placeholder="my url name" style={{ width: '200px' }} required id="name" name="name" type="text" />
         </div>
         <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
