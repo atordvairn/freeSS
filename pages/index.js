@@ -4,7 +4,8 @@ import { Button } from "@chakra-ui/react"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Input } from "@chakra-ui/react"
 import Script from 'next/script'
-import React from 'react';
+import React from 'react'
+import $ from 'jquery'
 
 export default function Home() {
 React.useEffect(() => {
