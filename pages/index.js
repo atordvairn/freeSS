@@ -10,14 +10,14 @@ export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
  
-    fetch("https://throw-me-to.vercel.app/api/create", {
+    fetch("/api/create", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: {
-        name: event.target.name.value,
-        url: event.target.url.value
+        "name": event.target.name.value,
+        "url": event.target.url.value
       },
     })
     alert(0)
