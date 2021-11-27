@@ -2,6 +2,11 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient({ log: ['query', 'info'] })
 
 export default function handler({ query: { data } }, res) {
+if (req.method !== 'POST') {
+  res.status(400).send({ message: 'Only POST requests allowed' })
+  return
+}
+
   async function main() {
     const user = await prisma.urls.create({
       data: {
