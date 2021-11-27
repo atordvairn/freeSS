@@ -1,16 +1,16 @@
 document.querySelector("#button").addEventListener("click", function(){
-try{
+
+var name = $("#name").val;
+var url = $("#url").val;
 
 $.ajax({
-type: "GET",
-url: "https://throw-me-to.vercel.app/api/create/okokkakaka=naice",
-cache: false,
+  type: "GET",
+  url: "https://throw-me-to.vercel.app/api/create/"+ name +"="+ url,
+  cache: false,
 
-success: function(html){
-//$("#more").after(html);
-alert("Success!");
-}
+  success: function(html){
+   alert("Success!");
+  }
 });
 
-}catch(e){alert(e)}
 })
