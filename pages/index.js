@@ -10,7 +10,7 @@ export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
  
-    fetch("/api/create/", {
+    /*fetch("https://throw-me-to.vercel.app/api/create", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,7 +19,34 @@ export default function Home() {
         name: event.target.name.value,
         url: event.target.url.value
       },
-    })
+    })*/
+
+
+
+var url = "https://throw-me-to.vercel.app/api/create";
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url);
+
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = `{
+  "name": "rtestva",
+  "url": "ytestaa"
+}
+`;
+
+xhr.send(data);
+
+
+
+
     alert(0)
   }
 
