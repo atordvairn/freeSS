@@ -9,7 +9,7 @@ import React from 'react'
 export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
-    fetch("/api/create/te479784748684684684=ffiufukukfkukyffku")
+    fetch("/api/create/"+event.target.name.value+"=ffiufukukfkukyffku")
   }
 
   return (
