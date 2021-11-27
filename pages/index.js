@@ -9,16 +9,13 @@ import React from 'react'
 export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
- 
+    var data__ = { name: event.target.name.value, url: event.target.url.value };
     fetch("/api/create", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: {
-        "name": event.target.name.value,
-        "url": event.target.url.value
-      },
+      body: JSON.stringify(data__),
     })
     alert(0)
   }
