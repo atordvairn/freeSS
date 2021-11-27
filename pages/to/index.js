@@ -1,7 +1,9 @@
 import React from 'react'
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
+import { useRouter } from 'next/router'
 
-export default function to() {
+export default function to(props) {
+    const router = useRouter()
     let todo = {
         name: 'raghav'
     };
@@ -13,5 +15,8 @@ export default function to() {
     }).then(res => res.json())
         .then(json => window.location.replace(json.url))
 
-    return (<></>)
+    return (<>
+        you will be redirected shotly
+        {router.location}
+    </>)
 }
