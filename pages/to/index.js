@@ -1,6 +1,9 @@
 import React from 'react'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
+const queryString = require('query-string');
+
+console.log(location.search);
 
 export default function to(props) {
     const router = useRouter()
@@ -17,6 +20,6 @@ export default function to(props) {
 
     return (<>
         you will be redirected shotly
-        {router.location}
+        {location.search}
     </>)
 }
