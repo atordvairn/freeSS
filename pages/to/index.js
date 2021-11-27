@@ -1,8 +1,9 @@
 import React from 'react'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
+import router from 'next/router'
 
-export default function To({ url: { query: { name } } }) {
+export default function To() {
     const router = useRouter()
     let todo = {
         name: 'raghav'
@@ -17,6 +18,6 @@ export default function To({ url: { query: { name } } }) {
 
     return (<>
         you will be redirected shotly
-        {name}
+        {router.query}
     </>)
 }
