@@ -12,7 +12,7 @@ export default function handler({ query: { data } }, res) {
 
        res.statusCode = 200;
        res.setHeader('Content-Type', 'application/json')
-       res.end(JSON.stringify(data))
+       res.end(data)
   }
 
   main()
