@@ -6,6 +6,10 @@ import { Input } from "@chakra-ui/react"
 import Script from 'next/script'
 
 export default function Home() {
+React.useEffect(() => {
+    alert("0")
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
