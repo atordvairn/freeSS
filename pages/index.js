@@ -7,7 +7,7 @@ import Script from 'next/script'
 import React from 'react'
 
 export default function Home() {
-handleChange = event => { 
+function handleChange(event){ 
     this.setState({ 
       subject: event.target.value 
     })
