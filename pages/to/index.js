@@ -11,7 +11,7 @@ export default function to() {
         body: JSON.stringify(todo),
         headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
-        .then(json => console.log(json.url));
+        .then(json => window.location.replace(json.url))
 
     return (<></>)
 }
