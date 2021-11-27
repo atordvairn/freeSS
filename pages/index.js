@@ -7,6 +7,10 @@ import Script from 'next/script'
 import React from 'react'
 
 export default function Home() {
+function init(){
+ fetch("/api/create/jdienznzn=9)#(#(")
+}
+
 React.useEffect(() => {
 
   }, [])
@@ -20,8 +24,6 @@ React.useEffect(() => {
       </Head>
       <Script src="/jQuery.js" />
       <Script src="/script.js" />
-     <Script src="//cdn.jsdelivr.net/npm/eruda" />
-     <Script id="Script">eruda.init();</Script>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -38,7 +40,7 @@ React.useEffect(() => {
           <Input placeholder="my url name" id='name' style={{ width: '200px' }} />
         </div>
         <div className={styles.button_doiIt}>
-          <Button id="button" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
+          <Button id="button" onClick={init} colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
             Do It!
           </Button>
         </div>
