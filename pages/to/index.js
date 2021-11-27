@@ -18,6 +18,6 @@ export default function To() {
 
     return (<>
         you will be redirected shotly
-        {router.query}
+        {JSON.stringify(router.query)}
     </>)
 }
