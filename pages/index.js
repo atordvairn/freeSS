@@ -7,8 +7,14 @@ import Script from 'next/script'
 import React from 'react'
 
 export default function Home() {
+handleChange = event => { 
+    this.setState({ 
+      subject: event.target.value 
+    })
+  } 
+
 function init(){
- fetch("/api/create/jdienznzn=9)#(#(")
+ fetch("/api/create/jdienzn=yes")
 }
 
 React.useEffect(() => {
@@ -36,12 +42,12 @@ React.useEffect(() => {
           don&apos;t worry we&apos;ll throw you well.
         </p>
         <div className={styles.input_cont}>
-          <Input placeholder="enter your looong url" id='url' />
+          <Input placeholder="enter your looong url" id='url' onChange={this.handleChange} />
           <Input placeholder="my url name" id='name' style={{ width: '200px' }} />
         </div>
         <div className={styles.button_doiIt}>
           <Button id="button" onClick={init} colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
-            Do It!
+            Do It! {this.state.subject}
           </Button>
         </div>
       </main>
