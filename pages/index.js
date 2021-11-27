@@ -9,7 +9,7 @@ import React from 'react'
 export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
-    fetch("/api/create/"+event.target.name.value+"=ffiufukukfkukyffku")
+    fetch("/api/create/"+event.target.name.value+"="+event.target.name.value)
   }
 
   return (
@@ -35,8 +35,8 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="enter your looong url" id="url" name="url" type="text" required/>
-          <Input placeholder="my url name" style={{ width: '200px' }} required id="name" name="name" type="text" />
+          <Input placeholder="enter your looong url" id="name" name="name" type="text" required/>
+          <Input placeholder="my url name" style={{ width: '200px' }} required id="url" name="name" type="url" />
         </div>
         <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
