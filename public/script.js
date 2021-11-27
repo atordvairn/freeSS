@@ -8,9 +8,12 @@ $.ajax({
   url: "https://throw-me-to.vercel.app/api/create/"+ name +"="+ url,
   cache: false,
 
-  success: function(html){
+  success: function(request, status){
    alert("Success!");
   }
+  error: function (request, status, error) {
+        alert(error);
+    }
 });
 
 })
