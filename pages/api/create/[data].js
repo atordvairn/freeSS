@@ -10,9 +10,9 @@ export default function handler({ query: { data } }, res) {
       },
     })
 
-    console.log(data)
-    res.status(200).json(user)
-    res.redirect('https://throw-me-to.vercel.app/');
+       res.statusCode = 200;
+       res.setHeader('Content-Type', 'application/json')
+       res.end(JSON.stringify(data))
   }
 
   main()
