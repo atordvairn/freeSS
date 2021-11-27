@@ -19,8 +19,8 @@ export default function Home() {
       },
       body: JSON.stringify(data__),
     })
-    swal("link successfully generated and copied to clipboard!");
-    copy('🦄🌈');
+    swal("congrats!", "link successfully generated and copied to clipboard!", "success");
+    copy('https://throw-me-to.vercel.app/to?q='+event.target.name.value);
 
   }
 
