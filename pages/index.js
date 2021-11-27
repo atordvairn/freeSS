@@ -10,7 +10,7 @@ export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
  
-    fetch("/api/create/, {
+    fetch("/api/create/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
