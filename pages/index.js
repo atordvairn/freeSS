@@ -8,7 +8,7 @@ import React from 'react'
 
 export default function Home() {
 function Form() {
-  const registerUser = event => {
+  const function registerUser(event){
     event.preventDefault() // don't redirect the page
     }
   }
