@@ -6,7 +6,7 @@ import router from 'next/router'
 export default function To() {
     const router = useRouter()
     let todo = {
-        name: JSON.stringify(router.query.q)
+        name: router.query.q
     };
 
     fetch('/api/get/', {
