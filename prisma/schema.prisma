@@ -8,6 +8,6 @@ datasource db {
 }
 
 model urls {
-  url  String @db.VarChar(50)
+  url  String @db.VarChar(200)
   name String @unique @db.VarChar(10)
 }
