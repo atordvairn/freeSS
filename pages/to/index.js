@@ -17,7 +17,6 @@ export default function To() {
         .then(json => window.location.replace(json.url))
 
     return (<>
-        you will be redirected shotly
-        {JSON.stringify(router.query.q)}
+        Please wait for ~5 seconds...
     </>)
 }
