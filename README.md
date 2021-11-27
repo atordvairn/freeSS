@@ -1,2 +1,2 @@
-# [throw-me-to](https://throw-me-to.now.sh/)
+# [throw-me](https://throw-me.now.sh/)
 ## a url shortener (pretty straight forward)
