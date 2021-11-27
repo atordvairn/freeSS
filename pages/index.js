@@ -10,7 +10,7 @@ export default function Home() {
 function Form() {
   const registerUser = event => {
     event.preventDefault() // don't redirect the page
-    
+    }
   }
 
   return (
