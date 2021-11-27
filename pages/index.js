@@ -10,6 +10,7 @@ export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
     fetch("/api/create/"+event.target.name.value+"="+event.target.name.value)
+    alert(0)
   }
 
   return (
@@ -35,8 +36,8 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="enter your looong url" id="name" name="name" type="text" required/>
-          <Input placeholder="my url name" style={{ width: '200px' }} required id="url" name="name" type="url" />
+          <Input placeholder="my url name" style={{ width: '200px' }} required id="url" name="url" type="text" />
+          <Input placeholder="enter your looong url" id="name" name="name" type="url" required/>
         </div>
         <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
