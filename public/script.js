@@ -1,4 +1,4 @@
-$("#button").on("click", function(){
+$("button").on("click", function(){
   var name = $("#name").val;
   var url = $("#url").val;
   var url_ = `https://throw-me-to.vercel.app/api/create/${name}=${url}`;
