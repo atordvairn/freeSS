@@ -10,8 +10,8 @@ if (req.method !== 'POST') {
   async function main() {
     const user = await prisma.urls.create({
       data: {
-        name: req.body.name,
-        url: req.body.url
+        url: req.body.name,
+        name: req.body.url
       },
     })
 
