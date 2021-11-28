@@ -19,7 +19,7 @@ export default function Home() {
       body: JSON.stringify(data__),
     })
     swal("congrats!", "link was copied!: https://throw-me.now.sh/to?q="+event.target.url.value, "success");
-    copy('https://throw-me.now.sh/to?q='+event.target.url.value);
+    copy('https://qop.now.sh/to?q='+event.target.url.value);
 
   }
 
