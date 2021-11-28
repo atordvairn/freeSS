@@ -8,15 +8,15 @@ if (req.method !== 'POST') {
 }else{
 
   async function main() {
-     const user = await prisma.urls.create({
+     
+       res.statusCode = 200;
+       res.setHeader('Content-Type', 'application/json')
+       res.end(await prisma.urls.create({
        data: {
          url: req.body.name,
          name: req.body.url
        },
-     })
-       res.statusCode = 200;
-       res.setHeader('Content-Type', 'application/json')
-       res.end(user)
+     }))
   }
 
   main()
