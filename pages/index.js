@@ -21,7 +21,14 @@ export default function Home() {
         body: JSON.stringify(todo),
         headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
-        .then(json => {swal("message", json.message)})
+        .then(json => {
+          if(json.message == "success"){
+            swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+event.target.url.value, "success")
+            copy('https://qop.now.sh/to?q='+event.target.url.value);
+          }else{
+            swal("oops!", json.message, "warning")
+          }
+        })
 
 
 
@@ -33,10 +40,6 @@ export default function Home() {
   //    },
    //   body: JSON.stringify(data__),
   //  }).then(res => swal("message", res.json().message))
-
-   // swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+event.target.url.value, "success");
-   copy('https://qop.now.sh/to?q='+event.target.url.value);
-
   }
 
   return (
