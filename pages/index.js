@@ -44,10 +44,8 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-         <InputGroup>
-         <InputLeftAddon text="https://throw-me.now.sh/to?q=" />
+         <InputLeftAddon children="https://throw-me.now.sh/to?q=" />
           <Input placeholder="my url name" required id="url" name="url" type="text" />
-         </InputGroup>
           <Input placeholder="enter your looong url" id="name" name="name" type="url" required/>
         </div>
         <div className={styles.button_doiIt}>
