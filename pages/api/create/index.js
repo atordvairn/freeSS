@@ -22,7 +22,10 @@ if (req.method !== 'POST') {
              if(e.code == 'P2002'){
               res.setHeader('Content-Type', 'application/json')
               res.status(400).send({ message: "the url already exists! Choose a better name!" })
-          }
+             }else{
+              res.setHeader('Content-Type', 'application/json')
+              res.status(400).send({ message: e.code })
+             }
          }
    }else{
         res.setHeader('Content-Type', 'application/json')
