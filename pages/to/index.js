@@ -32,7 +32,8 @@ export default function To() {
         <h1 className={styles.title}>
           Please wait for ~5 seconds...
           <div style={{ fontSize: '1.5rem' }}>
-             Chill 🧊
+             Chill 🧊 <br />
+             You'll be surely redirected if the link entered was correct!
           </div>
         </h1>
       </main>
