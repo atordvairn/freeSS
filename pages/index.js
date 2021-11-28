@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button, InputLeftAddon, InputGroup, Input } from "@chakra-ui/react"
+import { Button, Input } from "@chakra-ui/react"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Script from 'next/script'
 import React from 'react'
@@ -18,7 +18,7 @@ export default function Home() {
       },
       body: JSON.stringify(data__),
     })
-    swal("congrats!", "link successfully generated and copied to clipboard!", "success");
+    swal("congrats!", "link: https://throw-me.now.sh/to?q="+event.target.url.value", "success");
     copy('https://throw-me.now.sh/to?q='+event.target.url.value);
 
   }
