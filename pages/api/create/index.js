@@ -8,7 +8,7 @@ if (req.method !== 'POST') {
 }else{
 
   async function main() {
-     if(req.body.url.length <= 10 && req.body.url.length >= 3){
+     if(req.body.url.length <= 20 && req.body.url.length >= 3){
          await prisma.urls.create({
           data: {
             url: req.body.name,
