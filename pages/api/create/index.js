@@ -21,9 +21,9 @@ if (req.method !== 'POST') {
               res.setHeader('Content-Type', 'application/json')
               res.status(400).send({ message: "the url already exists! Choose a better name!" })
           }
+          res.setHeader('Content-Type', 'application/json')
+          res.status(200).send({ message: 'success' })
          }
-        res.setHeader('Content-Type', 'application/json')
-        res.status(200).send({ message: 'success' })
    }else{
         res.setHeader('Content-Type', 'application/json')
         res.status(400).send({ message: 'failed' })
