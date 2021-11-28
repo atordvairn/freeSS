@@ -45,7 +45,7 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="google" required id="url" name="url" type="text" maxlength="10" />
+          <Input placeholder="google" required id="url" name="url" type="text" minlength="3" maxlength="10" />
           <Input placeholder="https://google.com/" id="name" name="name" type="url" required maxlength="200"/>
         </div>
         <div className={styles.button_doiIt}>
