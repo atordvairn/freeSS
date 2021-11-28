@@ -17,8 +17,10 @@ if (req.method !== 'POST') {
             },
           })
          }catch(e){
+             if(e.code == 'P2002'){
               res.setHeader('Content-Type', 'application/json')
-              res.status(400).send({ error: e.code })
+              res.status(400).send({ message: "the url already exists! Choose a better name!" })
+          }
          }
         res.setHeader('Content-Type', 'application/json')
         res.status(200).send({ message: 'success' })
