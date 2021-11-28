@@ -22,7 +22,29 @@ with body as:
   "url": "google"
 }
 ```
+### CREATE WITH AJAX
+``` JavaScript
+var url = "https://throw-me.now.sh/api/create/";
 
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url);
+
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = `{
+  "name": "https://google.com/",
+  "url": "google"
+}`;
+
+xhr.send(data);
+
+```
 
 
 ## get
@@ -32,6 +54,28 @@ with body as:
 {
   "name": "theName"
 }
+```
+### GET WITH AJAX
+``` JavaScript
+var url = "https://throw-me.now.sh/api/get/";
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url);
+
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = `{
+  "name": "google"
+}
+`;
+
+xhr.send(data);
 ```
 
 
