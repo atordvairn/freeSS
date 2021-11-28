@@ -18,9 +18,8 @@ if (req.method !== 'POST') {
         res.setHeader('Content-Type', 'application/json')
         res.status(200).send({ message: 'success' })
    }else{
-     res.statusCode = 400;
-     res.setHeader('Content-Type', 'application/json')
-     res.end({message: "bad request"})
+        res.setHeader('Content-Type', 'application/json')
+        res.status(400).send({ message: 'failed' })
    }
   }
 
