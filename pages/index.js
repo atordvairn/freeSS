@@ -59,7 +59,9 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span className={styles.logo}>
-          <Link color="teal" href="https://twitter.com/volcareso">(c) volcareso</Link>
+          <Link color="teal" href="https://volcareso.js.org/">(c) volcareso</Link>
+          <br />
+          <Link color="teal.500" href="https://twitter.com/volcareso">Twitter</Link> | <Link color="teal.500" href="https://github.com/volcareso">GitHub</Link>
         </span>
       </footer>
     </div>
