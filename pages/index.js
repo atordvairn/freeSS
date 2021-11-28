@@ -10,14 +10,29 @@ import copy from 'copy-text-to-clipboard'
 export default function Home() {
   function registerUser(event){
     event.preventDefault() // don't redirect the page
-    var data__ = { name: event.target.name.value, url: event.target.url.value };
-    fetch("/api/create", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data__),
-    }).then(res => swal("message", res.json().message))
+
+   let todo = {
+        name: event.target.name.value,
+        url: event.target.url.value
+    };
+
+    fetch('/api/create/', {
+        method: 'POST',
+        body: JSON.stringify(todo),
+        headers: { 'Content-Type': 'application/json' }
+    }).then(res => res.json())
+        .then(json => alert(json.message))
+
+
+
+   // var data__ = { name: event.target.name.value, url: event.target.url.value };
+   // fetch("/api/create", {
+   //   method: 'POST',
+   //   headers: {
+   //     'Content-Type': 'application/json',
+  //    },
+   //   body: JSON.stringify(data__),
+  //  }).then(res => swal("message", res.json().message))
 
    // swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+event.target.url.value, "success");
    //copy('https://qop.now.sh/to?q='+event.target.url.value);
