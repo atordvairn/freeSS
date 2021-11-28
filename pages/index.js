@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button } from "@chakra-ui/react"
+import { Button, InputLeftAddon, InputGroup, Input } from "@chakra-ui/react"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Input } from "@chakra-ui/react"
 import Script from 'next/script'
 import React from 'react'
 import swal from 'sweetalert'
