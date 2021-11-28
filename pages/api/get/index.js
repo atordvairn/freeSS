@@ -15,7 +15,7 @@ export default function handler(req, res) {
             name: req.body.name
           }
         }))
-      res.end("")
+      res.end("success")
     }
 
     main()
