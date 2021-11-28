@@ -21,7 +21,7 @@ export default function Home() {
         body: JSON.stringify(todo),
         headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
-        .then(json => swal("message", json.message);copy('https://qop.now.sh/to?q='+event.target.url.value))
+        .then(json => swal("message", json.message))
 
 
 
@@ -35,7 +35,7 @@ export default function Home() {
   //  }).then(res => swal("message", res.json().message))
 
    // swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+event.target.url.value, "success");
-   //copy('https://qop.now.sh/to?q='+event.target.url.value);
+   copy('https://qop.now.sh/to?q='+event.target.url.value);
 
   }
 
