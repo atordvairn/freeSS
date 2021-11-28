@@ -8,7 +8,6 @@ if (req.method !== 'POST') {
 }else{
 
   async function main() {
-   if(req.body.url.length < 10){
      const user = await prisma.urls.create({
        data: {
          url: req.body.name,
@@ -18,11 +17,6 @@ if (req.method !== 'POST') {
        res.statusCode = 200;
        res.setHeader('Content-Type', 'application/json')
        res.end(user)
-   }else{
-       res.statusCode = 400;
-       res.setHeader('Content-Type', 'application/json')
-       res.end({ message: "bad request" })
-   }
   }
 
   main()
