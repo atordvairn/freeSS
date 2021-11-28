@@ -8,6 +8,7 @@ export default function handler(req, res) {
   } else {
 
     async function main() {
+    if(req.body.name.length <= 20 && req.body.name.length >= 3){
       res.setHeader('Content-Type', 'application/json')
       res.status(200).json(
         await prisma.urls.findUnique({
@@ -15,7 +16,10 @@ export default function handler(req, res) {
             name: req.body.name
           }
         }))
-      res.end("")
+     }else{
+       res.setHeader('Content-Type', 'application/json')
+       res.status(400).send({ message: 'failed' })
+     }
     }
 
     main()
