@@ -18,7 +18,7 @@ export default function Home() {
       },
       body: JSON.stringify(data__),
     })
-    swal("congrats!", "link: https://throw-me.now.sh/to?q="+event.target.url.value", "success");
+    swal("congrats!", "link was copied!: https://throw-me.now.sh/to?q="+event.target.url.value, "success");
     copy('https://throw-me.now.sh/to?q='+event.target.url.value);
 
   }
@@ -58,7 +58,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span className={styles.logo}>
-          (c) volcareso
+          <Link href="https://twitter.com/volcareso">(c) volcareso</Link>
         </span>
       </footer>
     </div>
