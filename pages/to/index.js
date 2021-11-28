@@ -31,8 +31,8 @@ export default function To() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Please wait for ~5 seconds...
-          <div style={{ fontSize: '1rem' }}>
-             Chill.
+          <div style={{ fontSize: '1.5rem' }}>
+             Chill 🧊
           </div>
         </h1>
       </main>
