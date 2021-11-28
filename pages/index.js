@@ -58,8 +58,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span className={styles.logo}>
-          (c) {" "}
-          <Link color="teal" href="https://twitter.com/volcareso">volcareso</Link>
+          <Link color="teal" href="https://twitter.com/volcareso">(c) volcareso</Link>
         </span>
       </footer>
     </div>
