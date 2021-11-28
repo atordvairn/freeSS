@@ -21,7 +21,7 @@ export default function Home() {
         body: JSON.stringify(todo),
         headers: { 'Content-Type': 'application/json' }
     }).then(res => res.json())
-        .then(json => swal("message", json.message))
+        .then(json => {swal("message", json.message)})
 
 
 
