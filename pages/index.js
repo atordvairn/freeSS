@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button, Input } from "@chakra-ui/react"
+import { Button, Input, Link } from "@chakra-ui/react"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Script from 'next/script'
 import React from 'react'
@@ -58,7 +58,8 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span className={styles.logo}>
-          <Link href="https://twitter.com/volcareso">(c) volcareso</Link>
+          (c) {" "}
+          <Link color="teal" href="https://twitter.com/volcareso">volcareso</Link>
         </span>
       </footer>
     </div>
