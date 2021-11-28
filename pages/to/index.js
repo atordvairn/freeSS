@@ -33,7 +33,7 @@ export default function To() {
           Please wait for ~5 seconds...
           <div style={{ fontSize: '1.5rem' }}>
              Chill 🧊 <br />
-             You'll be surely redirected if the link entered was correct!
+             you&apos;ll be surely redirected if the link entered was correct!
           </div>
         </h1>
       </main>
