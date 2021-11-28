@@ -9,12 +9,17 @@ if (req.method !== 'POST') {
 
   async function main() {
      if(req.body.url.length <= 20 && req.body.url.length >= 3){
-         await prisma.urls.create({
-          data: {
-            url: req.body.name,
-            name: req.body.url
-          },
-        })
+       try{
+           await prisma.urls.create({
+            data: {
+              url: req.body.name,
+              name: req.body.url
+            },
+          })
+         }catch(e){
+              res.setHeader('Content-Type', 'application/json')
+              res.status(400).send({ error: e.code })
+         }
         res.setHeader('Content-Type', 'application/json')
         res.status(200).send({ message: 'success' })
    }else{
