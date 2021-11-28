@@ -17,7 +17,7 @@ export default function Home() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data__),
-    }).then(res => swal("message", JSON.stringify(res.message)))
+    }).then(res => swal("message", res.message))
 
     swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+event.target.url.value, "success");
     copy('https://qop.now.sh/to?q='+event.target.url.value);
