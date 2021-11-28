@@ -20,7 +20,7 @@ export default function Home() {
       body: JSON.stringify(data__),
     })
     swal("congrats!", "link successfully generated and copied to clipboard!", "success");
-    copy('https://throw-me.vercel.app/to?q='+event.target.url.value);
+    copy('https://throw-me.now.sh/to?q='+event.target.url.value);
 
   }
 
@@ -46,7 +46,10 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="my url name" style={{ width: '200px' }} required id="url" name="url" type="text" />
+         <InputGroup>
+          <InputLeftAddon children="https://throw-me.now.sh/to?q=" />
+          <Input placeholder="my url name" required id="url" name="url" type="text" />
+         <InputGroup>
           <Input placeholder="enter your looong url" id="name" name="name" type="url" required/>
         </div>
         <div className={styles.button_doiIt}>
