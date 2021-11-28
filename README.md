@@ -18,8 +18,8 @@ Send a `post` request to `https://throw-me.now.sh/api/create/`
 with body as:
 ``` json
 {
-  "url": "the url name",
-  "name": "https://google.com/"
+  "name": "https://google.com/",
+  "url": "google"
 }
 ```
 
@@ -30,7 +30,7 @@ Send a `post` request to `https://throw-me.now.sh/api/get/`
 with body as:
 ``` json
 {
-  "name": "theNameOfTheUrl"
+  "name": "theName"
 }
 ```
 
