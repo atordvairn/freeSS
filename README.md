@@ -1,3 +1,4 @@
+![icon](/public/favicon.ico)
 # [Throw-Me](https://throw-me.now.sh/)
 ## a url shortener (pretty straight forward)
 
