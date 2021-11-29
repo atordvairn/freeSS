@@ -3,8 +3,8 @@ const prisma = new PrismaClient({ log: ['query', 'info'] })
 import rateLimit from '../../../utils/rate-limit'
 
 const limiter = rateLimit({
-  interval: 60 * 1000, // 60 seconds
-  uniqueTokenPerInterval: 500, // Max 500 users per second
+  interval: 60 * 1000,
+  uniqueTokenPerInterval: 100,
 })
 
 export default async function handler(req, res) {
