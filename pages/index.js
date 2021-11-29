@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>ThrowMeTo- A hassle free url shortner</title>
+        <title>ThrowMe- A hassle free url shortner</title>
         <meta name="description" content="hassle free URL shortener which is totally free and ad free. Made by volcareso with nextjs and postgresql database operated with Prisma." />
         <link rel="icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="C6xnU6De7b5pwywkmMyctt0ljMz0CsD9FmbMF2b8oiI" />
@@ -42,7 +42,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Throw-Me-To
+          Throw-Me
           <div style={{ fontSize: '1rem' }}>
             ( it&apos;s a url shortner )
           </div>
