@@ -23,7 +23,8 @@
     "react-router": "^6.0.2",
     "sweetalert": "2.1.2",
     "copy-text-to-clipboard": "3.0.1",
-    "next-pwa": "5.4.1"
+    "next-pwa": "5.4.1",
+    "lru-cache": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "7",
