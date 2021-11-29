@@ -4,7 +4,7 @@ import rateLimit from '../../../utils/rate-limit'
 
 const limiter = rateLimit({
   interval: 60 * 1000,
-  uniqueTokenPerInterval: 100,
+  uniqueTokenPerInterval: 500,
 })
 
 export default async function handler(req, res) {
@@ -55,7 +55,7 @@ if (req.method !== 'POST') {
 
 
  } catch {
-    res.status(429).json({ error: 'Rate limit exceeded' })
+    res.status(429).json({ message: 'Rate limit exceeded' })
   }
 
 
