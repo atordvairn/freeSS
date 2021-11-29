@@ -9,8 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me/issues)
 [![GitHub stars](https://img.shields.io/github/stars/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me/network)
-[![GitHub license](https://img.shields.io/github/license/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me)
-
+[![GitHub license](https://img.shields.io/github/license/volcareso/throw-me?label=LICENCE&style=for-the-badge)](https://github.com/volcareso/throw-me/blob/main/LICENCE)
 
 Made with-
 - nextJS
