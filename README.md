@@ -1,19 +1,22 @@
-![icon](/public/favicon.ico)
+<p align="center">
+  <img src="/public/favicon.ico" />
+</p>
+
 # [Throw-Me](https://throw-me.now.sh/)
-## a url shortener (pretty straight forward)
+### A url shortener (pretty straight forward)
 
 Made with-
-- nextjs
+- nextJS
 - prisma
 - postgresql
 - chakra UI
 
 deployed on
-- app on vercel
-- database on heroku
+- App on vercel
+- Database on heroku
 
-# api
-## create
+# Api
+## Create the url in the db
 Send a `post` request to `https://throw-me.now.sh/api/create/`
 with body as:
 ``` json
@@ -22,7 +25,9 @@ with body as:
   "name": "google"
 }
 ```
-### CREATE WITH AJAX
+
+### `Create` with JavaScript ajax
+
 ``` JavaScript
 var url = "https://throw-me.now.sh/api/create/";
 
@@ -47,7 +52,11 @@ xhr.send(data);
 ```
 
 
-## get
+---
+
+
+
+## Get the url from the db
 Send a `post` request to `https://throw-me.now.sh/api/get/`
 with body as:
 ``` json
@@ -55,7 +64,7 @@ with body as:
   "name": "theName"
 }
 ```
-### GET WITH AJAX
+### `Get` with JavaScript ajax
 ``` JavaScript
 var url = "https://throw-me.now.sh/api/get/";
 
