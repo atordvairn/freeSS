@@ -64,8 +64,8 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="google" required id="url" name="url" type="text" minlength="3" maxlength="20" />
-          <Input placeholder="https://google.com/" id="name" name="name" type="url" required maxlength="200"/>
+          <Input placeholder="google" required id="name" name="name" type="text" minlength="3" maxlength="20" />
+          <Input placeholder="https://google.com/" id="url" name="url" type="url" required maxlength="200" minlength="5"/>
         </div>
         <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
