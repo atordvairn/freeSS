@@ -12,8 +12,8 @@ if (req.method !== 'POST') {
        try{
            await prisma.urls.create({
             data: {
-              url: req.body.name,
-              name: req.body.url
+              url: req.body.url,
+              name: req.body.name
             },
           })
           res.setHeader('Content-Type', 'application/json')
