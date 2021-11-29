@@ -9,5 +9,5 @@ datasource db {
 
 model urls {
   url  String @db.VarChar(200)
-  name String @unique @db.VarChar(10)
+  name String @unique @db.VarChar(20)
 }
