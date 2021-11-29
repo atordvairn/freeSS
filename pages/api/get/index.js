@@ -10,7 +10,7 @@ const limiter = rateLimit({
 
 export default async function handler(req, res) {
   try {
-    await limiter.check(res, 10, 'CACHE_TOKEN') // 10 requests per minute
+    await limiter.check(res, 60, 'CACHE_TOKEN') // 10 requests per minute
   if (req.method !== 'POST') {
     res.status(400).send({ message: 'Only POST requests allowed' })
     return
