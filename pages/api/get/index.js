@@ -1,7 +1,16 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient({ log: ['query', 'info'] })
+import rateLimit from '../../../utils/rate-limit'
 
-export default function handler(req, res) {
+const limiter = rateLimit({
+  interval: 60 * 1000,
+  uniqueTokenPerInterval: 500,
+})
+
+
+export default async function handler(req, res) {
+  try {
+    await limiter.check(res, 10, 'CACHE_TOKEN') // 10 requests per minute
   if (req.method !== 'POST') {
     res.status(400).send({ message: 'Only POST requests allowed' })
     return
@@ -29,5 +38,8 @@ export default function handler(req, res) {
       .finally(async () => {
         await prisma.$disconnect()
       })
+  }
+  } catch {
+    res.status(429).json({ message: 'Rate limit exceeded' })
   }
 }
