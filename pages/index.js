@@ -29,17 +29,6 @@ export default function Home() {
             swal("oops!", json.message, "warning")
           }
         })
-
-
-
-   // var data__ = { name: event.target.name.value, url: event.target.url.value };
-   // fetch("/api/create", {
-   //   method: 'POST',
-   //   headers: {
-   //     'Content-Type': 'application/json',
-  //    },
-   //   body: JSON.stringify(data__),
-  //  }).then(res => swal("message", res.json().message))
   }
 
   return (
