@@ -29,7 +29,7 @@ if (req.method !== 'POST') {
          }
    }else{
         res.setHeader('Content-Type', 'application/json')
-        res.status(400).send({ message: 'failed' })
+        res.status(400).send({ message: 'failed', reason: "parameters" })
    }
   }
 
