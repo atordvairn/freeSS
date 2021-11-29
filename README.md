@@ -18,8 +18,8 @@ Send a `post` request to `https://throw-me.now.sh/api/create/`
 with body as:
 ``` json
 {
-  "name": "https://google.com/",
-  "url": "google"
+  "url": "https://google.com/",
+  "name": "google"
 }
 ```
 ### CREATE WITH AJAX
@@ -38,8 +38,8 @@ xhr.onreadystatechange = function () {
    }};
 
 var data = `{
-  "name": "https://google.com/",
-  "url": "google"
+  "url": "https://google.com/",
+  "name": "google"
 }`;
 
 xhr.send(data);
