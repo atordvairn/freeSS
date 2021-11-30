@@ -9,13 +9,21 @@ import copy from 'copy-text-to-clipboard'
 
 export default function Home() {
   function registerUser(event){
-    event.preventDefault() // don't redirect the page
-
-   let todo = {
-        name: event.target.name.value,
+    event.preventDefault();
+    var random__ = Math.random().toString(36).substr(4, 8);
+   if(event.target.name.value == ''){
+      var todo = {
+        name: random__,
         url: event.target.url.value
-    };
-
+      }
+   }else{
+      var random__ = event.target.name.value;
+      var todo = {
+        name: random__,
+        url: event.target.url.value
+      }
+   }
+    event.target.name.value = random__;
     fetch('/api/create/', {
         method: 'POST',
         body: JSON.stringify(todo),
@@ -23,8 +31,8 @@ export default function Home() {
     }).then(res => res.json())
         .then(json => {
           if(json.message == "success"){
-            swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+event.target.name.value, "success")
-            copy('https://qop.now.sh/to?q='+event.target.name.value);
+            swal("congrats!", "link was copied!: https://qop.now.sh/to?q="+random__, "success")
+            copy('https://qop.now.sh/to?q=' + random__);
           }else{
             swal("oops!", json.message, "warning")
           }
@@ -53,7 +61,7 @@ export default function Home() {
         <form onSubmit={registerUser}>
           
         <div className={styles.input_cont}>
-          <Input placeholder="google" required id="name" name="name" type="text" minlength="3" maxlength="20" />
+          <Input placeholder="google ( optional )" id="name" name="name" type="text" minlength="3" maxlength="20" />
           <Input placeholder="https://google.com/" id="url" name="url" type="url" required maxlength="200" minlength="5"/>
         </div>
         <div className={styles.button_doiIt}>
