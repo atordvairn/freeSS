@@ -72,7 +72,7 @@ export default function Home() {
 
         </form>
         
-        <Box boxShadow='md' p='5' rounded='md'>
+        <Box boxShadow='md' p='5' rounded='xl'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
       </main>
