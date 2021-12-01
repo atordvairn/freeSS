@@ -2,7 +2,7 @@
   <img src="/public/favicon.ico" />
 </p>
 
-# [Throw-Me](https://throw-me.now.sh/)
+# [Throw-Me](https://throw-me.vercel.com/)
 ### A url shortener (pretty straight forward)
 
 
