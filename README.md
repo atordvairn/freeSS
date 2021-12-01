@@ -22,10 +22,11 @@ deployed on
 - Database on heroku
 
 
-# Why Am I Not Making It More Advanced
-URL shortener should be a URL shortener and not a rocket that you can launch on Mars. <br>
-URL shortener is something simple, elegant and decent and not a site filled with switches and options...
-
+# What Is This?
+Now a days, url shorteners are made to launch you to Mars,
+It doesn't.
+If you're expecting a url shortener to be elegant accessible, open source, free, ad-less, you're at the right place...
+This product does exactly what it's said to, not less, not more.
 
 # Api
 ## Create the url in the db
