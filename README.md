@@ -22,7 +22,6 @@ deployed on
 - Database on heroku
 
 
-
 # Why Am I Not Making It More Advanced
 URL shortener should be a URL shortener and not a rocket that you can launch on Mars. <br>
 URL shortener is something simple, elegant and decent and not a site filled with switches and options...
