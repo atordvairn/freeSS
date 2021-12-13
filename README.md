@@ -5,7 +5,6 @@
 # [Throw-Me](https://throw-me.vercel.app/)
 ### A url shortener (pretty straight forward)
 
-
 [![GitHub issues](https://img.shields.io/github/issues/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me/issues)
 [![GitHub stars](https://img.shields.io/github/stars/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/volcareso/throw-me?style=for-the-badge)](https://github.com/volcareso/throw-me/network)
