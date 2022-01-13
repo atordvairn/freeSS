@@ -62,7 +62,7 @@ export default function Home() {
           </Button>
          </div>
         </form>
-        <img src="" id="screenshot" alt="the screenshot you requested" />
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
