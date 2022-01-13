@@ -11,7 +11,7 @@ export default function Home() {
   function getSS(event){
     event.preventDefault();
    try{
-    document.querySelector("#screenshot").src = "https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif";
+    document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
     var theUrl = event.target.url.value;
     if(theUrl.match(/\:\/\//) == "://"){
       fetch("https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1])
