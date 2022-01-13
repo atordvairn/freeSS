@@ -11,8 +11,9 @@ export default function Home() {
   function getSS(event){
     event.preventDefault();
    try{
-    alert(event.target.url.value)
-    document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+event.target.url.value;
+    alert(event.target.url.value);
+    var theUrl = event.target.url.value;
+    document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1];
    }catch(e){alert(e)}
   }
 
@@ -46,7 +47,7 @@ export default function Home() {
           </Button>
          </div>
         </form>
-        <img src="https://cdn.statically.io/screenshot/dev.to" id="screenshot" />
+        <img src="" id="screenshot" />
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
