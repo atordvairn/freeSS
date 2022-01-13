@@ -11,17 +11,27 @@ export default function Home() {
   function getSS(event){
     event.preventDefault();
    try{
+    document.querySelector("#screenshot").src = "https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif";
     var theUrl = event.target.url.value;
-    alert(theUrl.match(/\:\/\//))
     if(theUrl.match(/\:\/\//) == "://"){
-      document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1]; 
+      fetch("https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1])
+        .then((res) => {
+          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1]; 
+        })
     }else{
-      document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl;
+      fetch("https://cdn.statically.io/screenshot/"+theUrl)
+        .then((res) => {
+          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl;
+        })
     }
     swal("Good job!", "done!", "success");
    }catch(e){alert(e)}
   }
 
+//  function imageLoaded(){
+//    document.querySelector("#screenshot").display = "block";
+//  }
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -52,7 +62,7 @@ export default function Home() {
           </Button>
          </div>
         </form>
-        <img src="" id="screenshot" />
+        <img src="" id="screenshot" alt="the screenshot you requested" />
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
