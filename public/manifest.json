@@ -1,22 +1,24 @@
 {
   "name": "freeSS",
   "short_name": "freeSS",
+  "description": "A tool to take screenshot of webpages 🕸️.",
+  "lang": "en-GB",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "teal",
   "icons": [
     {
       "src": "/favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
-
     {
       "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "theme_color": "teal",
-  "background_color": "teal",
-  "start_url": "/",
-  "display": "standalone",
-  "orientation": "portrait"
+  "background_color": "teal"
 }
