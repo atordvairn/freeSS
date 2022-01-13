@@ -12,7 +12,8 @@ export default function Home() {
     event.preventDefault();
    try{
     var theUrl = event.target.url.value;
-    if(theUrl.test(/\:\/\//)){
+    alert(theUrl.match(/\:\/\//))
+    if(theUrl.match(/\:\/\//) == "://"){
       document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1]; 
     }else{
       document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl;
