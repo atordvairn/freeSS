@@ -9,33 +9,24 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>About ThrowMe- The hassle free url shortner</title>
+        <title>About freeSS- A Tool To Take Screenshot Of A Webpage</title>
         <meta name="description" content="About the web app, which is, indeed, simple and straight" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="google-site-verification" content="C6xnU6De7b5pwywkmMyctt0ljMz0CsD9FmbMF2b8oiI" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          About Throw-Me
+          About freeSS
           <div style={{ fontSize: '1rem' }}>
-            ( it&apos;s a url shortner )
+            A Tool To Take Screenshot Of A Webpage
           </div>
         </h1>
-        <p className={styles.description}>
-          The hassle free url shortener...
-        </p>
-        <Box boxShadow='xl' p='5' m={4} rounded='md'>
-           <Heading style={{ color: "#38B2AC" }}>What Is This?</Heading>
-           Now a days, url shorteners are made to launch you to Mars, <br />
-           It doesn&apos;t. <br />
-           If you&apos;re expecting a url shortener to be elegant accessible, open source, free, ad-less, you&apos;re at the right place... <br />
-           This product does exactly what it&apos;s said to, not less, not more.
+        <Box boxShadow='xl' p='5' m={4} rounded='md' style={{ padding: "10px" }}>
+           <Heading style={{ color: "#38B2AC", padding: "10px" }}>What Is This?</Heading>
+           Simple tool to extract the screenshot of the given web page URL. made elegent and decent in design without the advertisements annoying you all the way.
         </Box>
         <Box boxShadow='xl' p='10' rounded='md'>
-          <a href="https://www.producthunt.com/posts/throw-me?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-throw-me"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321140&theme=light" alt="Throw-Me - A hassle free URL shortener | Product Hunt" style={{width: '250px', height: '54px'}} width="250" height="54" /></a>
-          <a href="https://www.producthunt.com/posts/throw-me?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-throw-me"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=321140&theme=light&period=daily" alt="Throw-Me - A hassle free URL shortener | Product Hunt" style={{width: '250px', height: '54px'}} width="250" height="54" /></a>
-          <a href="https://www.producthunt.com/posts/throw-me?utm_source=badge-review&utm_medium=badge&utm_souce=badge-throw-me#discussion-body"><img src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=321140&theme=light" alt="Throw-Me - A hassle free URL shortener | Product Hunt" style={{width: '250px', height: '54px'}} width="250" height="54" /></a>
+           
         </Box>
       </main>
 
