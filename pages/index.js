@@ -10,6 +10,7 @@ import copy from 'copy-text-to-clipboard'
 export default function Home() {
   function getSS(event){
     alert(event.target.url.value)
+    document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+event.target.url.value;
   }
 
   return (
@@ -42,8 +43,8 @@ export default function Home() {
           </Button>
          </div>
         </form>
-        
-        <Box boxShadow='xl' p='5' rounded='md'>
+        <img src="" id="screenshot" />
+        <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
       </main>
