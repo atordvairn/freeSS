@@ -11,9 +11,13 @@ export default function Home() {
   function getSS(event){
     event.preventDefault();
    try{
-    alert(event.target.url.value);
     var theUrl = event.target.url.value;
-    document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1];
+    if(theUrl.test(/\:\/\//)){
+      document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1]; 
+    }else{
+      document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+theUrl;
+    }
+    swal("Good job!", "done!", "success");
    }catch(e){alert(e)}
   }
 
