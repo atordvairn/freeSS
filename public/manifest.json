@@ -1,15 +1,15 @@
 {
-  "name": "throw-me- a decent url shortener",
-  "short_name": "throw-me",
+  "name": "freeSS",
+  "short_name": "freeSS",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
 
     {
-      "src": "/favicon.ico",
+      "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
