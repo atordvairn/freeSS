@@ -26,13 +26,14 @@ export default function Home() {
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1]; 
         })
+        .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }else{
       fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl)
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl;
         })
+        .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }
-    swal("Good job!", "done!", "success");
    }catch(e){alert(e)}
   }
 
@@ -58,7 +59,7 @@ export default function Home() {
 
         <form onSubmit={getSS}>          
          <div className={styles.input_cont}>
-          <Input placeholder="https://google.com/" id="url" name="url" required maxlength="200" minlength="5"/>
+          <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
           <input type="checkbox" id="mobile" name="mobile" />
           <label htmlFor="mobile"> mobile</label>
          </div>
