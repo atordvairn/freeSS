@@ -60,7 +60,7 @@ export default function Home() {
          <div className={styles.input_cont}>
           <Input placeholder="https://google.com/" id="url" name="url" required maxlength="200" minlength="5"/>
           <Input type="checkbox" id="mobile" name="mobile" />
-          <label for="mobile"> mobile</label>
+          <label htmlFor="mobile"> mobile</label>
          </div>
          <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
