@@ -15,5 +15,3 @@ deployed on
 
 # What Is This?
 An open source tool which can screenshot the url you give of a webpage.
-
-
