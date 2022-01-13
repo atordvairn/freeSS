@@ -9,8 +9,11 @@ import copy from 'copy-text-to-clipboard'
 
 export default function Home() {
   function getSS(event){
+    event.preventDefault();
+   try{
     alert(event.target.url.value)
     document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot/"+event.target.url.value;
+   }catch(e){alert(e)}
   }
 
   return (
@@ -34,7 +37,7 @@ export default function Home() {
 
         <form onSubmit={getSS}>          
          <div className={styles.input_cont}>
-          <Input placeholder="https://google.com/" id="url" name="url" type="url" required maxlength="200" minlength="5"/>
+          <Input placeholder="https://google.com/" id="url" name="url" required maxlength="200" minlength="5"/>
           
          </div>
          <div className={styles.button_doiIt}>
@@ -43,7 +46,7 @@ export default function Home() {
           </Button>
          </div>
         </form>
-        <img src="" id="screenshot" />
+        <img src="https://cdn.statically.io/screenshot/dev.to" id="screenshot" />
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
