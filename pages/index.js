@@ -22,12 +22,12 @@ export default function Home() {
     }
 
     if(theUrl.match(/\:\/\//) == "://"){
-      fetch("https://cdn.statically.io/screenshot/"+theUrl.split(/\:\/\//)[1])
+      fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1])
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1]; 
         })
     }else{
-      fetch("https://cdn.statically.io/screenshot/"+theUrl)
+      fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl)
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl;
         })
