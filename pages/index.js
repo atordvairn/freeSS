@@ -23,21 +23,29 @@ export default function Home() {
 
     function isFullPage(){
       if(event.target.full.checked){
-        return ",full=true/";
+        return "full=true/";
       }
       return "/";
     }
 
+    function comma(){
+      if(event.target.mobile.checked && event.target.full.checked){
+        return ",";
+      }else{
+        return "/";
+      }
+    }
+
     if(theUrl.match(/\:\/\//) == "://"){
-      fetch("https://cdn.statically.io/screenshot"+isMobile()+isFullPage()+theUrl.split(/\:\/\//)[1])
+      fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
         .then((res) => {
-          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+isFullPage()+theUrl.split(/\:\/\//)[1];
+          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
         })
         .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }else{
-      fetch("https://cdn.statically.io/screenshot"+isMobile()+isFullPage()+theUrl)
+      fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
         .then((res) => {
-          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+isFullPage()+theUrl;
+          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
         })
         .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }
@@ -73,6 +81,7 @@ export default function Home() {
           <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
           <input type="checkbox" id="mobile" name="mobile" style={{ margin: "5px" }} />
           <label htmlFor="mobile"> mobile</label>
+          <br />
           <input type="checkbox" id="full" name="full" style={{ margin: "5px" }} />
           <label htmlFor="full"> full page screenshot</label>
          </div>
