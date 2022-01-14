@@ -4,7 +4,6 @@ import { Button, Input, Link, Box } from "@chakra-ui/react"
 import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
 import Script from 'next/script'
 import React from 'react'
-import swal from 'sweetalert'
 import copy from 'copy-text-to-clipboard'
 import Swal from 'sweetalert2'
 
@@ -29,7 +28,7 @@ export default function Home() {
   function getSS(event){
     event.preventDefault();
    try{
-    
+    document.querySelector("#copyURL").style.display = "none";
     if(event.target.pdf.checked){
       if(event.target.url.value.match(/\:\/\//) == "://"){
         window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value.split(/\:\/\//)[1]);
@@ -78,7 +77,13 @@ export default function Home() {
           })
       }
     }
-   }catch(e){alert(e)}
+   }catch(error){
+     Swal.fire(
+       'Oops',
+        error,
+       'warning'
+     )
+   }
   }
 
   function copyURL(){
