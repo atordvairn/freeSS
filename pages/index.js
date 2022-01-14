@@ -64,6 +64,7 @@ export default function Home() {
   function copyURL(){
     copy(document.querySelector("#screenshot").src);
   }
+
   function init(){
     var pdfEventListener = document.querySelector("#pdf");
     pdfEventListener.addEventListener('change', function() {
@@ -73,10 +74,10 @@ export default function Home() {
         document.querySelector("#controls").style.display = "block";
       }
     });
-  }init();
+  }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onLoad={init}>
       <Head>
         <title>freeSS - A Tool To Take Screenshot Of Webpages 🕸️</title>
         <meta name="description" content="A tool to take screenshot of webpages 🕸️." />
