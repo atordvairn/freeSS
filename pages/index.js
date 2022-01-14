@@ -105,7 +105,7 @@ export default function Home() {
             <label htmlFor="full"> full page screenshot</label>
            </div>
            <br />
-            <input type="checkbox" onchange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }} />
+            <input type="checkbox" onChange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }} />
             <label htmlFor="pdf"> download full page pdf</label>
          </div>
          <div className={styles.button_doiIt}>
