@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Button, Input, Link, Box } from "@chakra-ui/react"
-import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
 import Script from 'next/script'
 import React from 'react'
 import swal from 'sweetalert'
@@ -37,6 +37,10 @@ export default function Home() {
    }catch(e){alert(e)}
   }
 
+
+  function copyURL(){
+    copy(document.querySelector("#screenshot").src);
+  }
   
   return (
     <div className={styles.container}>
@@ -70,6 +74,10 @@ export default function Home() {
          </div>
         </form>
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
+        <br />
+        <Button onClick={copyURL} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
+          Copy link
+        </Button>
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
