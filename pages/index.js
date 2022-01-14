@@ -13,7 +13,7 @@ export default function Home() {
    try{
     
     if(event.target.pdf.checked){
-      if(theUrl.match(/\:\/\//) == "://"){
+      if(event.target.url.value.match(/\:\/\//) == "://"){
         window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value.split(/\:\/\//)[1]);
       }else{
         window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value);
@@ -77,7 +77,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container} onLoad={init}>
+    <div className={styles.container}>
       <Head>
         <title>freeSS - A Tool To Take Screenshot Of Webpages 🕸️</title>
         <meta name="description" content="A tool to take screenshot of webpages 🕸️." />
@@ -107,7 +107,7 @@ export default function Home() {
            </div>
            <br />
             <input type="checkbox" id="pdf" name="pdf" style={{ margin: "5px" }} />
-            <label htmlFor="pdf"> download full page pdf</label>
+            <label htmlFor="pdf" onLoad={init}> download full page pdf</label>
          </div>
          <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
