@@ -48,14 +48,14 @@ export default function Home() {
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
-            document.querySelector("#copyURL").isDisabled = false;
+            document.querySelector("#copyURL").removeAttribute("isDisabled");
           })
           .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }else{
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
-            document.querySelector("#copyURL").isDisabled = false;
+            document.querySelector("#copyURL").removeAttribute("isDisabled");
           })
           .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }
