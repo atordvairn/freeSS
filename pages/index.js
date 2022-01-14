@@ -48,14 +48,14 @@ export default function Home() {
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
-            document.querySelector("#copyURL").removeAttribute("isDisabled");
+            document.querySelector("#copyURL").style.display = "block";
           })
           .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }else{
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
-            document.querySelector("#copyURL").removeAttribute("isDisabled");
+            document.querySelector("#copyURL").style.display = "block";
           })
           .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }
@@ -118,7 +118,7 @@ export default function Home() {
         </form>
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
         <br />
-        <Button isDisabled onClick={copyURL} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
+        <Button onClick={copyURL} style={{ display: "none" }} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
           Copy link
         </Button>
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
