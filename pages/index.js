@@ -118,7 +118,7 @@ export default function Home() {
         </form>
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
         <br />
-        <Button onClick={copyURL} style={{ display: "none" }} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
+        <Button onClick={copyURL} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px", display: "none" }}>
           Copy link
         </Button>
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
