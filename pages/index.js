@@ -6,8 +6,26 @@ import Script from 'next/script'
 import React from 'react'
 import swal from 'sweetalert'
 import copy from 'copy-text-to-clipboard'
+import Swal from 'sweetalert2'
 
 export default function Home() {
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  function toastSuccess(){
+   Toast.fire({icon: 'success',title: 'The screenshot was generated successfully!'})
+  }
+
   function getSS(event){
     event.preventDefault();
    try{
@@ -49,15 +67,15 @@ export default function Home() {
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
             document.querySelector("#copyURL").style.display = "block";
+            toastSuccess();
           })
-          .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }else{
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
             document.querySelector("#copyURL").style.display = "block";
+            toastSuccess();
           })
-          .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }
     }
    }catch(e){alert(e)}
