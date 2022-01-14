@@ -65,15 +65,14 @@ export default function Home() {
     copy(document.querySelector("#screenshot").src);
   }
 
-  function init(){
-    var pdfEventListener = document.querySelector("#pdf");
-    pdfEventListener.addEventListener('change', function() {
-      if (this.checked) {
+  function pdfChanged(){
+      if (document.querySelector("#pdf").checked) {
         document.querySelector("#controls").style.display = "none";
+        document.querySelector("#full").checked = "false";
+        document.querySelector("#mobile").checked = "false";
       } else {
         document.querySelector("#controls").style.display = "block";
       }
-    });
   }
 
   return (
@@ -106,8 +105,8 @@ export default function Home() {
             <label htmlFor="full"> full page screenshot</label>
            </div>
            <br />
-            <input type="checkbox" id="pdf" name="pdf" style={{ margin: "5px" }} />
-            <label htmlFor="pdf" onLoad={init}> download full page pdf</label>
+            <input type="checkbox" onchange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }} />
+            <label htmlFor="pdf"> download full page pdf</label>
          </div>
          <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
