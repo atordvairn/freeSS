@@ -44,6 +44,19 @@ class MyDocument extends Document {
             }}
           />
          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8140175087839604" crossOrigin="anonymous"></script>
+         <script src="https://giscus.app/client.js"
+                 data-repo="atordvairn/freeSS"
+                 data-repo-id="R_kgDOGq2aSQ"
+                 data-category="General"
+                 data-category-id="DIC_kwDOGq2aSc4CAquD"
+                 data-mapping="url"
+                 data-reactions-enabled="1"
+                 data-emit-metadata="0"
+                 data-theme="preferred_color_scheme"
+                 data-lang="en"
+                 crossorigin="anonymous"
+                  async>
+</script>
         </Head>
         <body>
           <Main />
