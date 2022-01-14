@@ -4,14 +4,31 @@ import { Button, Input, Link, Box } from "@chakra-ui/react"
 import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
 import Script from 'next/script'
 import React from 'react'
-import swal from 'sweetalert'
 import copy from 'copy-text-to-clipboard'
+import Swal from 'sweetalert2'
 
 export default function Home() {
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  function toastSuccess(){
+   Toast.fire({icon: 'success',title: 'The screenshot was generated successfully!'})
+  }
+
   function getSS(event){
     event.preventDefault();
    try{
-    
+    document.querySelector("#copyURL").style.display = "none";
     if(event.target.pdf.checked){
       if(event.target.url.value.match(/\:\/\//) == "://"){
         window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value.split(/\:\/\//)[1]);
@@ -48,17 +65,25 @@ export default function Home() {
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
+            document.querySelector("#copyURL").style.display = "block";
+            toastSuccess();
           })
-          .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }else{
         fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
           .then((res) => {
             document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
+            document.querySelector("#copyURL").style.display = "block";
+            toastSuccess();
           })
-          .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
       }
     }
-   }catch(e){alert(e)}
+   }catch(error){
+     Swal.fire(
+       'Oops',
+        error,
+       'warning'
+     )
+   }
   }
 
   function copyURL(){
@@ -116,7 +141,7 @@ export default function Home() {
         </form>
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
         <br />
-        <Button onClick={copyURL} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
+        <Button onClick={copyURL} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px", display: "none" }}>
           Copy link
         </Button>
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
