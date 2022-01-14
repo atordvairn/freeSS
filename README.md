@@ -2,6 +2,7 @@
   <img src="/public/favicon.png" height="200px" />
 </p>
 
+
 # [freeSS](https://free-ss.vercel.app/)
 ### A webpage screenshot tool (pretty straight forward)
 
