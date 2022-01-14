@@ -64,7 +64,7 @@ export default function Home() {
         <form onSubmit={getSS}>          
          <div className={styles.input_cont}>
           <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
-          <input type="checkbox" id="mobile" name="mobile" />
+          <input type="checkbox" id="mobile" name="mobile" style={{ margin: "5px" }} />
           <label htmlFor="mobile"> mobile</label>
          </div>
          <div className={styles.button_doiIt}>
