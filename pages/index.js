@@ -68,8 +68,8 @@ export default function Home() {
   function pdfChanged(){
       if (document.querySelector("#pdf").checked) {
         document.querySelector("#controls").style.display = "none";
-        document.querySelector("#full").checked = "false";
-        document.querySelector("#mobile").checked = "false";
+        document.querySelector("#full").checked = false;
+        document.querySelector("#mobile").checked = false;
       } else {
         document.querySelector("#controls").style.display = "block";
       }
