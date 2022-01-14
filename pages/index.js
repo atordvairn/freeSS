@@ -8,10 +8,13 @@ import swal from 'sweetalert'
 import copy from 'copy-text-to-clipboard'
 
 export default function Home() {
+  let loading_ = false;
+
   function getSS(event){
     event.preventDefault();
    try{
     document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
+    loading_ = true;
     var theUrl = event.target.url.value;
      
     function isMobile(){
@@ -24,13 +27,15 @@ export default function Home() {
     if(theUrl.match(/\:\/\//) == "://"){
       fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1])
         .then((res) => {
-          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1]; 
+          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1];
+          loading_ = false;
         })
         .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }else{
       fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl)
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl;
+          loading_ = false;
         })
         .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }
@@ -75,7 +80,7 @@ export default function Home() {
         </form>
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
         <br />
-        <Button onClick={copyURL} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
+        <Button onClick={copyURL} disabled={loading_} id="copyURL" type="button" colorScheme="teal" rightIcon={<CopyIcon />} style={{ margin: "5px" }}>
           Copy link
         </Button>
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
