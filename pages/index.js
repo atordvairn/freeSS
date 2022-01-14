@@ -123,7 +123,7 @@ export default function Home() {
            <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
       </main>
-      <div class="giscus"></div>
+      <div className="giscus"></div>
       <footer className={styles.footer}>
         <span className={styles.logo}>
           <Link m={3} color="teal.500" href="/about">About this site</Link>
