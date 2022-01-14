@@ -8,13 +8,10 @@ import swal from 'sweetalert'
 import copy from 'copy-text-to-clipboard'
 
 export default function Home() {
-  let loading_ = false;
-
   function getSS(event){
     event.preventDefault();
    try{
     document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
-    loading_ = true;
     var theUrl = event.target.url.value;
      
     function isMobile(){
@@ -28,14 +25,12 @@ export default function Home() {
       fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1])
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl.split(/\:\/\//)[1];
-          loading_ = false;
         })
         .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }else{
       fetch("https://cdn.statically.io/screenshot"+isMobile()+theUrl)
         .then((res) => {
           document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+theUrl;
-          loading_ = false;
         })
         .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
     }
