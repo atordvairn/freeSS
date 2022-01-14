@@ -64,15 +64,16 @@ export default function Home() {
   function copyURL(){
     copy(document.querySelector("#screenshot").src);
   }
-  
-  var pdfEventListener = document.querySelector("#pdf");
-  pdfEventListener.addEventListener('change', function() {
-    if (this.checked) {
-      document.querySelector("#controls").style.display = "none";
-    } else {
-      document.querySelector("#controls").style.display = "block";
-    }
-  });
+  function init(){
+    var pdfEventListener = document.querySelector("#pdf");
+    pdfEventListener.addEventListener('change', function() {
+      if (this.checked) {
+        document.querySelector("#controls").style.display = "none";
+      } else {
+        document.querySelector("#controls").style.display = "block";
+      }
+    });
+  }init();
 
   return (
     <div className={styles.container}>
