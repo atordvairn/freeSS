@@ -11,52 +11,70 @@ export default function Home() {
   function getSS(event){
     event.preventDefault();
    try{
-    document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
-    var theUrl = event.target.url.value;
-     
-    function isMobile(){
-      if(event.target.mobile.checked){
-        return "/device=mobile";
-      }
-      return "/";
-    }
-
-    function isFullPage(){
-      if(event.target.full.checked){
-        return "full=true/";
-      }
-      return "/";
-    }
-
-    function comma(){
-      if(event.target.mobile.checked && event.target.full.checked){
-        return ",";
+    
+    if(event.target.pdf.checked){
+      if(event.target.url.value.match(/\:\/\//) == "://"){
+        window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value.split(/\:\/\//)[1]);
       }else{
+        window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value);
+      }
+    }else{ 
+      document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
+      var theUrl = event.target.url.value;
+       
+      function isMobile(){
+        if(event.target.mobile.checked){
+          return "/device=mobile";
+        }
         return "/";
       }
-    }
 
-    if(theUrl.match(/\:\/\//) == "://"){
-      fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
-        .then((res) => {
-          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
-        })
-        .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
-    }else{
-      fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
-        .then((res) => {
-          document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
-        })
-        .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
+      function isFullPage(){
+        if(event.target.full.checked){
+          return "full=true/";
+        }
+        return "/";
+      }
+
+      function comma(){
+        if(event.target.mobile.checked && event.target.full.checked){
+         return ",";
+        }else{
+           return "/";
+        }
+      }
+
+      if(theUrl.match(/\:\/\//) == "://"){
+        fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
+          .then((res) => {
+            document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
+          })
+          .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
+      }else{
+        fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
+          .then((res) => {
+            document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
+          })
+          .then((res) => {swal("Good job!", "The screenshot was generated successfully!", "success")})
+      }
     }
    }catch(e){alert(e)}
   }
 
-
   function copyURL(){
     copy(document.querySelector("#screenshot").src);
   }
-  
+
+  function pdfChanged(){
+      if (document.querySelector("#pdf").checked) {
+        document.querySelector("#controls").style.display = "none";
+        document.querySelector("#full").checked = "false";
+        document.querySelector("#mobile").checked = "false";
+      } else {
+        document.querySelector("#controls").style.display = "block";
+      }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -79,11 +97,16 @@ export default function Home() {
         <form onSubmit={getSS}>          
          <div className={styles.input_cont}>
           <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
-          <input type="checkbox" id="mobile" name="mobile" style={{ margin: "5px" }} />
-          <label htmlFor="mobile"> mobile</label>
-          <br />
-          <input type="checkbox" id="full" name="full" style={{ margin: "5px" }} />
-          <label htmlFor="full"> full page screenshot</label>
+           <div id="controls">
+            <input type="checkbox" id="mobile" name="mobile" style={{ margin: "5px" }} />
+            <label htmlFor="mobile"> mobile</label>
+            <br />
+            <input type="checkbox" id="full" name="full" style={{ margin: "5px" }} />
+            <label htmlFor="full"> full page screenshot</label>
+           </div>
+           <br />
+            <input type="checkbox" onChange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }} />
+            <label htmlFor="pdf"> download full page pdf</label>
          </div>
          <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
