@@ -54,7 +54,7 @@ class MyDocument extends Document {
                  data-emit-metadata="0"
                  data-theme="preferred_color_scheme"
                  data-lang="en"
-                 crossorigin="anonymous"
+                 crossOrigin="anonymous"
                   async>
 </script>
         </Head>
