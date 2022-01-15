@@ -43,7 +43,6 @@ class MyDocument extends Document {
           `,
             }}
           />
-         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8140175087839604" crossOrigin="anonymous"></script>
          <script src="https://giscus.app/client.js"
                  data-repo="atordvairn/freeSS"
                  data-repo-id="R_kgDOGq2aSQ"
