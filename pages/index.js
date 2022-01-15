@@ -124,7 +124,7 @@ export default function Home() {
           <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
            <div id="controls">
             <input type="checkbox" id="mobile" name="mobile" style={{ margin: "5px" }} />
-            <label htmlFor="mobile"> mobile</label>
+            <label htmlFor="mobile"> mobile view</label>
             <br />
             <input type="checkbox" id="full" name="full" style={{ margin: "5px" }} />
             <label htmlFor="full"> full page screenshot</label>
