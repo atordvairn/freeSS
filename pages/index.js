@@ -111,9 +111,9 @@ export default function Home() {
     }
   }
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isOpen2, onOpen2, onClose2 } = useDisclosure();
-  const { isOpen3, onOpen3, onClose3 } = useDisclosure();
+  let { isOpen, onOpen, onClose } = useDisclosure();
+  let { isOpen2, onOpen2, onClose2 } = useDisclosure();
+  let { isOpen3, onOpen3, onClose3 } = useDisclosure();
 
   return (
     <div className={styles.container}>
