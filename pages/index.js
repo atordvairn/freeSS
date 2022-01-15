@@ -111,9 +111,10 @@ export default function Home() {
     }
   }
 
-  let { isOpen, onOpen, onClose } = useDisclosure();
-  let { isOpen2, onOpen2, onClose2 } = useDisclosure();
-  let { isOpen3, onOpen3, onClose3 } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: isOneOpen , onOpen: onModalOneOpen, onClose: onModalOneClose } = useDisclosure()
+  const { isOpen: isTwoOpen , onOpen: onModalTwoOpen, onClose: onModalTwoClose } = useDisclosure()
+
 
   return (
     <div className={styles.container}>
@@ -203,8 +204,8 @@ export default function Home() {
 
            <br />
 
-            <Button m={2} onClick={onOpen2}>infinitely loading</Button>
-             <Modal isOpen={isOpen2} onClose={onClose2}>
+            <Button m={2} onClick={onModalOneOpen}>infinitely loading</Button>
+             <Modal isOpen={isOneOpen} onClose={onModalOneClose}>
               <ModalOverlay />
               <ModalContent>
                <ModalHeader>
@@ -236,8 +237,8 @@ export default function Home() {
 
             <br />
 
-            <Button m={2} onClick={onOpen3}>some other error</Button>
-             <Modal isOpen={isOpen3} onClose={onClose3}>
+            <Button m={2} onClick={onModalTwoOpen}>some other error</Button>
+             <Modal isOpen={isTwoOpen} onClose={onModalTwoClose}>
               <ModalOverlay />
               <ModalContent>
                <ModalHeader>
