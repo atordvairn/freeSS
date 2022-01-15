@@ -7,6 +7,16 @@ import copy from 'copy-text-to-clipboard'
 import Swal from 'sweetalert2'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright , faAddressBook } from '@fortawesome/free-solid-svg-icons'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react'
+
 
 export default function Home() {
 
@@ -101,6 +111,8 @@ export default function Home() {
     }
   }
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -151,6 +163,43 @@ export default function Home() {
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
           <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
+        <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
+          <span style={{ color: "#38B2AC" }}>Need Help?</span>
+          <br />
+          <div>
+            <Button onClick={onOpen}>showing error</Button>
+             <Modal isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent>
+               <ModalHeader>
+                 showing error
+               </ModalHeader>
+               <ModalCloseButton />
+               <ModalBody>
+                 sometimes, the server times out the crawl as the site is too big or long. In that case the best thing is to try again, if the site is still showing an error, it means that:
+                 <br />
+                 <ul>
+                   <li>
+                     Check if you're accessing a webpage and not a file ( ends in .txt or other extensions )
+                   </li>
+                   <li>
+                     check your internet connection 🙂
+                   </li>
+                   <li>
+                     Check if the site is available to you. If not, the server can't reach it also.
+                   </li>
+                 </ul>
+               </ModalBody>
+               <ModalFooter>
+                 <Button colorScheme='blue' mr={3} onClick={onClose}>
+                   Close
+                 </Button>
+               </ModalFooter>
+             </ModalContent>
+            </Modal>
+          </div>
+        </Box>
+        
       </main>
       <div className="giscus"></div>
       <footer className={styles.footer}>
