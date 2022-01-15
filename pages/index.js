@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button, Input, Link, Box, Checkbox } from "@chakra-ui/react"
+import { Button, Input, Link, Box, Checkbox, Divider } from "@chakra-ui/react"
 import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
 import React from 'react'
 import copy from 'copy-text-to-clipboard'
@@ -132,7 +132,7 @@ export default function Home() {
                 full page screenshot
               </Checkbox>
             </div>
-            <br />
+            <Divider />
             <Checkbox onChange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }}>
               download full page pdf
             </Checkbox>
