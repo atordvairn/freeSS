@@ -180,13 +180,13 @@ export default function Home() {
                  <br />
                  <ul>
                    <li>
-                     Check if you're accessing a webpage and not a file ( ends in .txt or other extensions )
+                     Check if you&apos;re accessing a webpage and not a file ( ends in .txt or other extensions )
                    </li>
                    <li>
                      check your internet connection 🙂
                    </li>
                    <li>
-                     Check if the site is available to you. If not, the server can't reach it also.
+                     Check if the site is available to you. If not, the server can&apos;t reach it also.
                    </li>
                  </ul>
                </ModalBody>
