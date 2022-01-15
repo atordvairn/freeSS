@@ -29,7 +29,7 @@ class MyDocument extends Document {
 
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=G-159GWH94RC`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -54,8 +54,7 @@ class MyDocument extends Document {
                  data-theme="preferred_color_scheme"
                  data-lang="en"
                  crossOrigin="anonymous"
-                  async>
-</script>
+                 ></script>
         </Head>
         <body>
           <Main />
