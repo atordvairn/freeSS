@@ -197,6 +197,63 @@ export default function Home() {
                </ModalFooter>
              </ModalContent>
             </Modal>
+
+
+           <br />
+
+            <Button onClick={onOpen}>infinitely loading</Button>
+             <Modal isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent>
+               <ModalHeader>
+                 infinitely loading
+               </ModalHeader>
+               <ModalCloseButton />
+               <ModalBody>
+                 The crawling process takes some time. Even if after a considerable amount of time , ur screenshot is not appearing, these  might help:
+                 <br />
+                 <ul>
+                   <li>
+                     copy the url from the address bar. ( Best practices in the town )
+                   </li>
+                   <li>
+                     check your internet connection 🙂. Your internet speed or data might not be sufficient to download the image. It takes longer download in desktop full images.
+                   </li>
+                   <li>
+                     Check if the site is available to you. If not, the server can&apos;t reach it also.
+                   </li>
+                 </ul>
+               </ModalBody>
+               <ModalFooter>
+                 <Button colorScheme='blue' mr={3} onClick={onClose}>
+                   Close
+                 </Button>
+               </ModalFooter>
+             </ModalContent>
+            </Modal>
+
+            <br />
+
+            <Button onClick={onOpen}>some other error</Button>
+             <Modal isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent>
+               <ModalHeader>
+                 some other error
+               </ModalHeader>
+               <ModalCloseButton />
+               <ModalBody>
+                 Hmm, in this case, u need to comment below and tell me what it is , i will add it in here also if needed so!
+               </ModalBody>
+               <ModalFooter>
+                 <Button colorScheme='blue' mr={3} onClick={onClose}>
+                   Close
+                 </Button>
+               </ModalFooter>
+             </ModalContent>
+            </Modal>
+
+
           </div>
         </Box>
         
