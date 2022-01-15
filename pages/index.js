@@ -5,6 +5,8 @@ import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
 import React from 'react'
 import copy from 'copy-text-to-clipboard'
 import Swal from 'sweetalert2'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopyright , faAddressBook } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 
@@ -19,84 +21,84 @@ export default function Home() {
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
   })
-  
-  function toastSuccess(){
-   Toast.fire({icon: 'success',title: 'The screenshot was generated successfully!'})
+
+  function toastSuccess() {
+    Toast.fire({ icon: 'success', title: 'The screenshot was generated successfully!' })
   }
 
-  function getSS(event){
+  function getSS(event) {
     event.preventDefault();
-   try{
-    document.querySelector("#copyURL").style.display = "none";
-    if(event.target.pdf.checked){
-      if(event.target.url.value.match(/\:\/\//) == "://"){
-        window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value.split(/\:\/\//)[1]);
-      }else{
-        window.open("https://cdn.statically.io/screenshot/pdf/"+event.target.url.value);
-      }
-    }else{ 
-      document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
-      var theUrl = event.target.url.value;
-       
-      function isMobile(){
-        if(event.target.mobile.checked){
-          return "/device=mobile";
+    try {
+      document.querySelector("#copyURL").style.display = "none";
+      if (event.target.pdf.checked) {
+        if (event.target.url.value.match(/\:\/\//) == "://") {
+          window.open("https://cdn.statically.io/screenshot/pdf/" + event.target.url.value.split(/\:\/\//)[1]);
+        } else {
+          window.open("https://cdn.statically.io/screenshot/pdf/" + event.target.url.value);
         }
-        return "/";
-      }
+      } else {
+        document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
+        var theUrl = event.target.url.value;
 
-      function isFullPage(){
-        if(event.target.full.checked){
-          return "full=true/";
+        function isMobile() {
+          if (event.target.mobile.checked) {
+            return "/device=mobile";
+          }
+          return "/";
         }
-        return "/";
-      }
 
-      function comma(){
-        if(event.target.mobile.checked && event.target.full.checked){
-         return ",";
-        }else{
-           return "/";
+        function isFullPage() {
+          if (event.target.full.checked) {
+            return "full=true/";
+          }
+          return "/";
+        }
+
+        function comma() {
+          if (event.target.mobile.checked && event.target.full.checked) {
+            return ",";
+          } else {
+            return "/";
+          }
+        }
+
+        if (theUrl.match(/\:\/\//) == "://") {
+          fetch("https://cdn.statically.io/screenshot" + isMobile() + comma() + isFullPage() + theUrl.split(/\:\/\//)[1])
+            .then((res) => {
+              document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot" + isMobile() + comma() + isFullPage() + theUrl.split(/\:\/\//)[1];
+              document.querySelector("#copyURL").style.display = "block";
+              toastSuccess();
+            })
+        } else {
+          fetch("https://cdn.statically.io/screenshot" + isMobile() + comma() + isFullPage() + theUrl)
+            .then((res) => {
+              document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot" + isMobile() + comma() + isFullPage() + theUrl;
+              document.querySelector("#copyURL").style.display = "block";
+              toastSuccess();
+            })
         }
       }
-
-      if(theUrl.match(/\:\/\//) == "://"){
-        fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1])
-          .then((res) => {
-            document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl.split(/\:\/\//)[1];
-            document.querySelector("#copyURL").style.display = "block";
-            toastSuccess();
-          })
-      }else{
-        fetch("https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl)
-          .then((res) => {
-            document.querySelector("#screenshot").src = "https://cdn.statically.io/screenshot"+isMobile()+comma()+isFullPage()+theUrl;
-            document.querySelector("#copyURL").style.display = "block";
-            toastSuccess();
-          })
-      }
-    }
-   }catch(error){
-     Swal.fire(
-       'Oops',
+    } catch (error) {
+      Swal.fire(
+        'Oops',
         error,
-       'warning'
-     )
-   }
+        'warning'
+      )
+    }
   }
 
-  function copyURL(){
+  function copyURL() {
     copy(document.querySelector("#screenshot").src);
   }
 
-  function pdfChanged(){
-      if (document.querySelector("#pdf").checked) {
-        document.querySelector("#controls").style.display = "none";
-        document.querySelector("#full").isChecked = false;
-        document.querySelector("#mobile").isChecked = false;
-      } else {
-        document.querySelector("#controls").style.display = "block";
-      }
+  function pdfChanged() {
+    if (document.querySelector("#pdf").checked) {
+      document.querySelector("#controls").style.display = "none";
+      document.querySelector("#full").isChecked = false;
+      document.querySelector("#mobile").isChecked = false;
+    } else {
+      document.querySelector("#controls").style.display = "block";
+    }
   }
 
   return (
@@ -105,7 +107,7 @@ export default function Home() {
         <title>freeSS - A Tool To Take Screenshot Of Webpages 🕸️</title>
         <meta name="description" content="A tool to take screenshot of webpages 🕸️." />
         <link rel="icon" href="/favicon.ico" />
-     </Head>
+      </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -118,28 +120,28 @@ export default function Home() {
           Fast. Free. Open source.
         </p>
 
-        <form onSubmit={getSS}>          
-         <div className={styles.input_cont}>
-          <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
-           <div id="controls">
-            <Checkbox id="mobile" name="mobile" style={{ margin: "5px" }}>
-              mobile view
-            </Checkbox>
+        <form onSubmit={getSS}>
+          <div className={styles.input_cont}>
+            <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5" />
+            <div id="controls">
+              <Checkbox id="mobile" name="mobile" style={{ margin: "5px" }}>
+                mobile view
+              </Checkbox>
+              <br />
+              <Checkbox id="full" name="full" style={{ margin: "5px" }} >
+                full page screenshot
+              </Checkbox>
+            </div>
             <br />
-            <Checkbox id="full" name="full" style={{ margin: "5px" }} >
-              full page screenshot
-            </Checkbox>
-           </div>
-           <br />
             <Checkbox onChange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }}>
               download full page pdf
             </Checkbox>
-         </div>
-         <div className={styles.button_doiIt}>
-          <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
-            Snap !
-          </Button>
-         </div>
+          </div>
+          <div className={styles.button_doiIt}>
+            <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
+              Snap !
+            </Button>
+          </div>
         </form>
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="screenshot" alt="the screenshot you requested" />
         <br />
@@ -147,14 +149,14 @@ export default function Home() {
           Copy link
         </Button>
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
-           <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
+          <span style={{ color: "#38B2AC" }}>Pro-Tip: </span> bookmark 🔖 this page for quick access!
         </Box>
       </main>
       <div className="giscus"></div>
       <footer className={styles.footer}>
         <span className={styles.logo}>
-          <Link m={3} color="teal.500" href="/about">About this site</Link>
-          <Link m={3} color="teal.500" href="//atordvairn.js.cool">(c) atordvairn {new Date().getFullYear()}</Link>
+          <Link m={3} color="teal.500" href="/about"><FontAwesomeIcon icon={faAddressBook} style={{ marginRight: "5px" }} /> About this site</Link>
+          <Link m={3} color="teal.500" href="//atordvairn.js.cool"><FontAwesomeIcon icon={faCopyright} style={{ marginRight: "5px" }} /> atordvairn {new Date().getFullYear()}</Link>
           <Link m={3} color="teal.500" href="https://twitter.com/atordvairn">Twitter</Link>
           <Link m={3} color="teal.500" href="https://github.com/atordvairn">GitHub</Link>
         </span>
