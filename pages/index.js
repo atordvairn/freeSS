@@ -15,8 +15,8 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
-
 
 export default function Home() {
 
