@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button, Input, Link, Box } from "@chakra-ui/react"
+import { Button, Input, Link, Box, Checkbox } from "@chakra-ui/react"
 import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
-import Script from 'next/script'
 import React from 'react'
 import copy from 'copy-text-to-clipboard'
 import Swal from 'sweetalert2'
@@ -93,8 +92,8 @@ export default function Home() {
   function pdfChanged(){
       if (document.querySelector("#pdf").checked) {
         document.querySelector("#controls").style.display = "none";
-        document.querySelector("#full").checked = false;
-        document.querySelector("#mobile").checked = false;
+        document.querySelector("#full").isChecked = false;
+        document.querySelector("#mobile").isChecked = false;
       } else {
         document.querySelector("#controls").style.display = "block";
       }
@@ -123,15 +122,18 @@ export default function Home() {
          <div className={styles.input_cont}>
           <Input placeholder="https://google.com/" id="url" type="url" name="url" required maxlength="200" minlength="5"/>
            <div id="controls">
-            <input type="checkbox" id="mobile" name="mobile" style={{ margin: "5px" }} />
-            <label htmlFor="mobile"> mobile view</label>
+            <Checkbox id="mobile" name="mobile" style={{ margin: "5px" }}>
+              mobile view
+            </Checkbox>
             <br />
-            <input type="checkbox" id="full" name="full" style={{ margin: "5px" }} />
-            <label htmlFor="full"> full page screenshot</label>
+            <Checkbox id="full" name="full" style={{ margin: "5px" }} >
+              full page screenshot
+            </Checkbox>
            </div>
            <br />
-            <input type="checkbox" onChange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }} />
-            <label htmlFor="pdf"> download full page pdf</label>
+            <Checkbox onChange={pdfChanged} id="pdf" name="pdf" style={{ margin: "5px" }}>
+              download full page pdf
+            </Checkbox>
          </div>
          <div className={styles.button_doiIt}>
           <Button id="button" type="submit" colorScheme="teal" rightIcon={<ArrowForwardIcon />} style={{ margin: "5px" }}>
