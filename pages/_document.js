@@ -29,7 +29,7 @@ class MyDocument extends Document {
 
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=G-159GWH94RC`}
+            src="https://www.googletagmanager.com/gtag/js?id=G-159GWH94RC"
           />
           <script
             dangerouslySetInnerHTML={{
@@ -53,8 +53,8 @@ class MyDocument extends Document {
                  data-emit-metadata="0"
                  data-theme="preferred_color_scheme"
                  data-lang="en"
-                 crossOrigin="anonymous"
-                 ></script>
+                 crossOrigin="anonymous" 
+                 async></script>
         </Head>
         <body>
           <Main />
