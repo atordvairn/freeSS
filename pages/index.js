@@ -112,6 +112,8 @@ export default function Home() {
   }
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen2, onOpen2, onClose2 } = useDisclosure();
+  const { isOpen3, onOpen3, onClose3 } = useDisclosure();
 
   return (
     <div className={styles.container}>
@@ -167,7 +169,7 @@ export default function Home() {
           <span style={{ color: "#38B2AC" }}>Need Help?</span>
           <br />
           <div>
-            <Button onClick={onOpen}>showing error</Button>
+            <Button m={2} onClick={onOpen}>showing error</Button>
              <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />
               <ModalContent>
@@ -201,8 +203,8 @@ export default function Home() {
 
            <br />
 
-            <Button onClick={onOpen}>infinitely loading</Button>
-             <Modal isOpen={isOpen} onClose={onClose}>
+            <Button m={2} onClick={onOpen2}>infinitely loading</Button>
+             <Modal isOpen={isOpen2} onClose={onClose2}>
               <ModalOverlay />
               <ModalContent>
                <ModalHeader>
@@ -234,8 +236,8 @@ export default function Home() {
 
             <br />
 
-            <Button onClick={onOpen}>some other error</Button>
-             <Modal isOpen={isOpen} onClose={onClose}>
+            <Button m={2} onClick={onOpen3}>some other error</Button>
+             <Modal isOpen={isOpen3} onClose={onClose3}>
               <ModalOverlay />
               <ModalContent>
                <ModalHeader>
