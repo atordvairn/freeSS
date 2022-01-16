@@ -54,14 +54,12 @@ export default function Home() {
           if (event.target.mobile.checked) {
             return "/device=mobile";
           }
-          return "/";
         }
 
         function isFullPage() {
           if (event.target.full.checked) {
             return "full=true/";
           }
-          return "/";
         }
 
         function comma() {
