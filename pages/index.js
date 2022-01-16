@@ -47,7 +47,7 @@ export default function Home() {
           window.open("https://cdn.statically.io/screenshot/pdf/" + event.target.url.value);
         }
       } else {
-        document.querySelector("#screenshot").src = "https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif";
+        document.querySelector("#screenshot").src = "https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif";
         var theUrl = event.target.url.value;
 
         function isMobile() {
