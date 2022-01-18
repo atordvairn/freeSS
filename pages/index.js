@@ -1,5 +1,5 @@
+import fetch from 'node-fetch';
 import Head from 'next/head'
-import urlExists from 'url-exists-deep';
 import styles from '../styles/Home.module.css'
 import { Button, Input, Link, Box, Checkbox, Divider } from "@chakra-ui/react"
 import { ArrowForwardIcon, CopyIcon } from '@chakra-ui/icons'
@@ -18,6 +18,7 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
+import urlExists from 'url-exists-deep';
 
 export default function Home() {
 
