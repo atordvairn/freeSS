@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Button, Input, Link, Box, Checkbox, Divider } from "@chakra-ui/react"
@@ -18,7 +17,7 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
-import urlExists from 'url-exists-deep';
+
 
 export default function Home() {
 
@@ -41,10 +40,6 @@ export default function Home() {
   async function getSS(event) {
     event.preventDefault();
     try {
-
-     const url = event.target.url.value;
-     const exists = await urlExists(url);
-     if(exists !== false){
       document.querySelector("#copyURL").style.display = "none";
       if (event.target.pdf.checked) {
         if (event.target.url.value.match(/\:\/\//) == "://") {
@@ -94,13 +89,7 @@ export default function Home() {
             })
         }
       }
-     }else{
-       Swal.fire(
-        'Oops',
-        'Url is invalid or not accessible',
-        'warning'
-      )
-     } // check if url exists ends...
+     }
     } catch (error) {
       Swal.fire(
         'Oops',
