@@ -89,7 +89,6 @@ export default function Home() {
             })
         }
       }
- //  }
     } catch (error) {
       Swal.fire(
         'Oops',
