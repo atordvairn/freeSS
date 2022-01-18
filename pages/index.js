@@ -37,7 +37,7 @@ export default function Home() {
     Toast.fire({ icon: 'success', title: 'The screenshot was generated successfully!' })
   }
 
-  function getSS(event) {
+  async function getSS(event) {
     event.preventDefault();
     try {
 
