@@ -17,7 +17,6 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
-const { colorMode, toggleColorMode } = useColorMode();
 
 export default function Home() {
 
@@ -116,6 +115,7 @@ export default function Home() {
   const { isOpen: isOneOpen , onOpen: onModalOneOpen, onClose: onModalOneClose } = useDisclosure()
   const { isOpen: isTwoOpen , onOpen: onModalTwoOpen, onClose: onModalTwoClose } = useDisclosure()
 
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <div className={styles.container}>
