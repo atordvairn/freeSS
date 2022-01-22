@@ -17,7 +17,7 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
-
+const { colorMode, toggleColorMode } = useColorMode();
 
 export default function Home() {
 
@@ -170,7 +170,8 @@ export default function Home() {
         <Box style={{ margin: "20px" }} boxShadow='xl' p='5' rounded='md'>
           <span style={{ color: "#38B2AC" }}>Need Help?</span>
           <br />
-          <div>
+          <div>    
+            <Button m={2} onClick={toggleColorMode}>Toogle Theme</Button>
             <Button m={2} onClick={onOpen}>showing error</Button>
              <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />
