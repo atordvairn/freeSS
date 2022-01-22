@@ -238,7 +238,6 @@ export default function Home() {
              </ModalContent>
             </Modal>
 
-            <br />
 
             <Button m={2} onClick={onModalTwoOpen}>some other error</Button>
              <Modal isOpen={isTwoOpen} onClose={onModalTwoClose}>
