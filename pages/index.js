@@ -231,7 +231,7 @@ export default function Home() {
                  </ul>
                </ModalBody>
                <ModalFooter>
-                 <Button colorScheme='blue' mr={3} onClick={onClose}>
+                 <Button colorScheme='blue' mr={3} onClick={onModalOneClose}>
                    Close
                  </Button>
                </ModalFooter>
@@ -251,7 +251,7 @@ export default function Home() {
                  Hmm, in this case, u need to comment below and tell me what it is , i will add it in here also if needed so!
                </ModalBody>
                <ModalFooter>
-                 <Button colorScheme='blue' mr={3} onClick={onClose}>
+                 <Button colorScheme='blue' mr={3} onClick={onModalTwoClose}>
                    Close
                  </Button>
                </ModalFooter>
