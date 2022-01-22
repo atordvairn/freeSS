@@ -16,6 +16,7 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  useColorMode,
 } from '@chakra-ui/react'
 
 export default function Home() {
